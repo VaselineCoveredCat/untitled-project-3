@@ -10,8 +10,8 @@
     monthlySalary = Number(monthlySalary);
     deadline = Number(deadline);
 
-    const offsetLow = targetAmount - (targetAmount * 0.02);
-    const offsetHigh = targetAmount + (targetAmount * 0.02);
+    const offsetLow = targetAmount - targetAmount * 0.02;
+    const offsetHigh = targetAmount + targetAmount * 0.02;
 
     let max = 100;
     let min = 0;
@@ -25,7 +25,7 @@
         bank = 0;
 
         for (let i = 0; i < deadline; i++) {
-          bank = bank + (monthlySalary * (mid / 100));
+          bank = bank + monthlySalary * (mid / 100);
         }
 
         if (bank >= offsetLow && bank <= offsetHigh) {
@@ -47,9 +47,15 @@
 
 <main class="max-w-800 min-h-100 mx-auto p-4 md-p-0">
   <h1>Savings Calculator</h1>
-  <p>Calculate how much money you need to contribute each month in order to arrive at specific savings goal.</p>
+  <p>
+    Calculate how much money you need to contribute each month in order to
+    arrive at specific savings goal.
+  </p>
 
-  <form on:submit|preventDefault={handleSubmit} class="gap-4 grid grid-1 max-w-400 md-gap-2 mx-auto my-4 md-my-2">
+  <form
+    on:submit|preventDefault={handleSubmit}
+    class="gap-4 grid grid-1 max-w-400 md-gap-2 mx-auto my-4 md-my-2"
+  >
     <div>
       <label for="targetamount">Savings goal</label>
       <input
@@ -59,7 +65,8 @@
         name="targetamount"
         pattern={`\\d{6,9}`}
         type="text"
-        required />
+        required
+      />
     </div>
 
     <div>
@@ -71,7 +78,8 @@
         name="monthlysalary"
         pattern={`\\d{6,9}`}
         type="text"
-        required />
+        required
+      />
     </div>
 
     <div>
@@ -83,15 +91,18 @@
         name="deadline"
         pattern={`\\d{1,3}`}
         type="text"
-        required />
+        required
+      />
     </div>
 
     <button type="submit">Calculate</button>
   </form>
 
-  {#if result > 0}
-    <p class="txt-center"><span class="font-bold txt-size-h1">{result.toFixed(1)}</span>%</p>
-  {/if}
+  <p class="txt-center" aria-live="polite">
+    {#if result > 0}
+      <span class="font-bold txt-size-h1">{result.toFixed(1)}</span>%
+    {/if}
+  </p>
 </main>
 
 <footer class="p-4 txt-center">
