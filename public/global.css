@@ -171,44 +171,44 @@
 
 @font-face {
   font-family: "Jost-fallback";
-  src: local("Arial");
   size-adjust: 95.32000000000005%;
   ascent-override: 130%;
+  src: local("Arial");
 }
 
 @font-face {
   font-family: "Jost";
   font-style: normal;
   font-weight: 900;
+  font-display: swap;
   src: local(""), url("../fonts/jost-v13-latin-900.woff2") format("woff2"),
     url("../fonts/jost-v13-latin-900.woff") format("woff");
-  font-display: swap;
 }
 
 @font-face {
   font-family: "Open Sans-fallback";
-  src: local("Arial");
   size-adjust: 105.44%;
   ascent-override: 98%;
+  src: local("Arial");
 }
 
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
+  font-display: swap;
   src: local(""),
     url("../fonts/open-sans-v29-latin-regular.woff2") format("woff2"),
     url("../fonts/open-sans-v29-latin-regular.woff") format("woff");
-  font-display: swap;
 }
 
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 700;
+  font-display: swap;
   src: local(""), url("../fonts/open-sans-v29-latin-700.woff2") format("woff2"),
     url("../fonts/open-sans-v29-latin-700.woff") format("woff");
-  font-display: swap;
 }
 
 html {
@@ -247,8 +247,8 @@ html {
 }
 
 ::-moz-focus-inner {
-  padding: 0;
   border-style: none;
+  padding: 0;
 }
 
 :-moz-focusring {
@@ -326,19 +326,19 @@ input:focus {
 
 button,
 [type="submit"] {
+  text-transform: uppercase;
+  -webkit-appearance: button;
   padding: 0.2rem 0.6rem;
   font-weight: 700;
   color: var(--color-teal-1);
   text-align: center;
   text-decoration: none;
-  text-transform: uppercase;
   letter-spacing: 2px;
   cursor: pointer;
   background-color: var(--color-azure-3);
   border: 2px solid transparent;
   outline: transparent solid 2px;
   transition-duration: 0.3s;
-  -webkit-appearance: button;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -490,5 +490,9 @@ button:focus {
   .md-my-2 {
     margin-top: 38px;
     margin-bottom: 38px;
+  }
+
+  .p-4 {
+    padding: 77px;
   }
 }
