@@ -46,12 +46,12 @@
 </script>
 
 <main class="max-w-800 min-h-100 mx-auto p-4 md-p-0">
-  <h1>Saving Plan</h1>
-  <p>Determine how long it will take you to save enough money given the following assumptions.</p>
+  <h1>Savings Calculator</h1>
+  <p>Calculate how much money you need to contribute each month in order to arrive at specific savings goal.</p>
 
   <form on:submit|preventDefault={handleSubmit} class="gap-4 grid grid-1 max-w-400 md-gap-2 mx-auto my-4 md-my-2">
     <div>
-      <label for="targetamount">Target amount</label>
+      <label for="targetamount">Savings goal</label>
       <input
         bind:value={targetAmount}
         id="targetamount"
@@ -93,3 +93,7 @@
     <p class="txt-center"><span class="font-bold txt-size-h1">{result.toFixed(1)}</span>%</p>
   {/if}
 </main>
+
+<footer class="p-4 txt-center">
+  <p>&copy; 2022 Vaseline Covered Cat</p>
+</footer>
